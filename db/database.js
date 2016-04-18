@@ -1,6 +1,6 @@
 var mongoose = require('mongoose');
 
-// connect us to the database
+// connect us to the database.
 
 var connectionString = process.env.DB;
 console.log('Attempting to Connect to MongoDB');
