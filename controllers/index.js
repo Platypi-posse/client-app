@@ -1,5 +1,7 @@
 var express = require('express');
-var router = express.Router();
+var controller = express.Router();
+
+var models = require('../models/schema')
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
