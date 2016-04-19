@@ -6,7 +6,7 @@ var models = require('../models/schema')
 
 /* GET home page. */
 controller.get('/', function(req, res, next) {
-  res.render('index', { title: 'ChiStreetArt' });
+  res.render('locations', { title: 'Locations' });
 });
 
 controller.post('/', function(req, res, next){
@@ -14,4 +14,4 @@ controller.post('/', function(req, res, next){
 })
 
 
-module.exports = controller;
+module.exports = locations;
