@@ -11,6 +11,9 @@ require('./db/database');
 
 var controllers = require('./controllers/index');
 var users = require('./controllers/users');
+var contribute = require('./controllers/contribute');
+var eachlocation = require('./controllers/eachlocation');
+var locations = require('./controllers/locations')
 
 var app = express();
 
@@ -29,6 +32,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', controllers);
 app.use('/users', users);
+app.use('/contribute', contribute);
+app.use('/eachlocation', eachlocation);
+app.use('/locations', locations);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
