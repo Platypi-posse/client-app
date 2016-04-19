@@ -14,4 +14,4 @@ controller.post('/', function(req, res, next){
 })
 
 
-module.exports = eachlocation;
+module.exports = controller;
