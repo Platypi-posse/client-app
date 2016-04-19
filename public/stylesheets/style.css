@@ -1,13 +1,2 @@
-body{padding:50px;font:14px "Lucida Grande",Helvetica,Arial,sans-serif}a{color:#00B7FF}
 
-
-#slideshow, img.bgM {
-  min-height: 100%;
-  min-width: 100%;
-  width: 100%;
-  height: auto;
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index:-9999;
-}
+body{padding:50px;font:14px "Lucida Grande",Helvetica,Arial,sans-serif}a{color:#00B7FF}#slideshow,img.bgM{min-height:100%;min-width:100%;width:100%;height:auto;position:fixed;top:0;left:0;z-index:-9999}header{text-align:center;color:white}ul{padding:0px;background:rgba(0,0,0,0.5)}li{display:inline;padding:0px 10px 0px 10px}

@@ -8,7 +8,7 @@ var userSchema = new mongoose.Schema({
   passwordHash: String
 });
 
-mongoose.model('User', userSchema);
+var User = mongoose.model('User', userSchema);
 
 // locationSchema
 
@@ -21,7 +21,7 @@ var locationSchema = new mongoose.Schema({
   directions: String
 });
 
-mongoose.model('Location', locationSchema);
+var Location = mongoose.model('Location', locationSchema);
 
 // imageSchema
 
@@ -29,14 +29,13 @@ var imageSchema = new mongoose.Schema({
   username: String,
   location_id: String,
   date: Date,
-  image: String
+  image: String,
 });
 
-mongoose.model('Image', imageSchema);
+var Image = mongoose.model('Image', imageSchema);
 
 module.exports = {
   User: User,
   Location: Location,
   Image: Image
 };
-
