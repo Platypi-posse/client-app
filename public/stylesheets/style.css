@@ -1,5 +1,1 @@
-<<<<<<< HEAD
-body{padding:50px;font:14px "Lucida Grande",Helvetica,Arial,sans-serif}a{color:#00B7FF}#slideshow,img.bgM{min-height:100%;min-width:100%;width:100%;height:auto;position:fixed;top:0;left:0;z-index:-9999}header{text-align:center;color:white;margin-top:-40px}ul{padding:0px;background:rgba(0,0,0,0.5)}li{display:inline;padding:0px 10px 0px 10px}
-=======
-body{padding:50px;font:14px "Lucida Grande",Helvetica,Arial,sans-serif}a{color:#00B7FF}#slideshow,img.bgM{min-height:100%;min-width:100%;width:100%;height:auto;position:fixed;top:0;left:0;z-index:-9999}header{text-align:center;color:white}ul{padding:0px;background:rgba(0,0,0,0.5)}li{display:inline;padding:0px 10px 0px 10px}
->>>>>>> 258b7957a021d3ffcbd2c85c0b9e74809f562120
+body{padding:50px;font-size:14px;font-family:'Rock Salt',cursive;color:white}a{color:#00B7FF}#slideshow,img.bgM{min-height:100%;min-width:100%;width:100%;height:auto;position:fixed;top:0;left:0;z-index:-9999}header{text-align:center;color:white;margin-top:-45px}ul{padding:0px;background:rgba(0,0,0,0.5)}li{display:inline;padding:0px 10px 0px 10px}#logo{font-size:16px;color:#0df58d}
