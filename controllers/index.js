@@ -5,7 +5,7 @@ var models = require('../models/schema')
 
 /* GET home page. */
 controller.get('/', function(req, res, next) {
-  // res.render('index', { title: 'ChiStreetArt' });
+  res.render('index', { title: 'ChiStreetArt' });
 
 });
 
