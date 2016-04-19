@@ -9,7 +9,24 @@
  * Requires: jQuery v1.3.2 or later
  */
 
-////////////////
+ ////////////////
+ //image upload
+
+ function readURL(input) {
+       if (input.files && input.files[0]) {
+           var reader = new FileReader();
+
+           reader.onload = function (e) {
+               $("#myImage").val(e.target.result)
+           console.log($('#myImage').val())
+           };
+
+           reader.readAsDataURL(input.files[0]);
+         }
+};
+
+
+ //end of image upload
 
 $(document).ready(function() {
 	$('#slideshow').cycle({
