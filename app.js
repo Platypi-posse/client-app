@@ -33,6 +33,12 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(require('less-middleware')(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'public')));
+// setup sessions
+app.use(require('express-session')({
+  secret: 'chichichiart',
+  resave: false,
+  saveUninitialzed: false
+}));// end session
 
 app.use('/', controllers);
 app.use('/users', users);
