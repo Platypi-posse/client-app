@@ -1,9 +1,8 @@
 var express = require('express');
 var controller = express.Router();
 var http = require('http');
-var querystring = require('querystring');
 
-var models = require('../models/schema')
+// var models = require('../models/schema')
 
 /* GET home page. */
 controller.get('/', function(req, res, next) {
@@ -21,8 +20,54 @@ controller.get('/', function(req, res, next) {
       console.log("no more data")
       if (response.statusCode == 200){
         location = JSON.parse(body);
+        console.log("location here:")
         console.log(location);
+        console.log("location[0] here:")
+        console.log(location[0]);
+
         res.json(location)
+      }
+    })
+  })
+})
+
+controller.get('/:id', function(req, res, next) {
+  // res.render('locations', { title: 'Locations' });
+  var id = req.params.id;
+  var request = http.get("http://localhost:5000/locations/" + id, function(response){
+    console.log(response.statusCode);
+    var body = "";
+    var location = "";
+    response.on('data', function(chunk){
+      console.log("body: " + chunk);
+      console.log(body)
+      body += chunk;
+    })
+    response.on('end', function(){
+      console.log("no more data")
+      if (response.statusCode == 200){
+        location = JSON.parse(body);
+        console.log("location here:")
+        console.log(location);
+        if (location === null) {
+          var err = new Error('Not Found');
+          err.status = 404;
+          next(err);
+        }
+        else {
+          intersection = location.intersection;
+          console.log(intersection);
+          art_piece_name = location.art_piece_name;
+          console.log(art_piece_name);
+          description = location.description;
+          console.log(description)
+          directions = location.directions;
+          console.log(directions);
+          artist = location.artist;
+          console.log(artist);
+          // res.json(location[0]);
+          res.render('locations', { title: 'Art Pieces/Locations', location: intersection, art_piece_name: art_piece_name, description: description, directions: directions, artist: artist })
+        }
       }
     })
   })
@@ -70,6 +115,8 @@ controller.post('/', function(req, res, next){
   });
   request.end(data);
 })
+
+
 
 
 module.exports = controller;
