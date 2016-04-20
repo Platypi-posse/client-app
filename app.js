@@ -14,7 +14,8 @@ var controllers = require('./controllers/index');
 var users = require('./controllers/users');
 var contribute = require('./controllers/contribute');
 var eachlocation = require('./controllers/eachlocation');
-var locations = require('./controllers/locations')
+var locations = require('./controllers/locations');
+var images = require('./controllers/images');
 
 
 var app = express();
@@ -38,6 +39,8 @@ app.use('/users', users);
 app.use('/contribute', contribute);
 app.use('/eachlocation', eachlocation);
 app.use('/locations', locations);
+app.use('/images', images);
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
