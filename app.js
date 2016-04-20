@@ -38,7 +38,7 @@ app.use(require('express-session')({
   secret: 'chichichiart',
   resave: false,
   saveUninitialzed: false
-}));// end session
+}));// end session weird
 
 app.use('/', controllers);
 app.use('/users', users);
