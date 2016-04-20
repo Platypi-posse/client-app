@@ -26,7 +26,8 @@ controller.get('/', function(req, res, next) {
         // console.log(location[0]);
         // res.json(location)
         res.render('locationcatalog', {
-          display: location
+          display: location,
+          title: 'Art Catalog'
         })
         // location = [{}, {}, {}, {}, ]
         // res.render('location', {})
@@ -70,7 +71,7 @@ controller.get('/:id', function(req, res, next) {
           artist = location.artist;
           console.log(artist);
           // res.json(location);
-          res.render('locations', { title: 'Art Pieces/Locations', location: intersection, art_piece_name: art_piece_name, description: description, directions: directions, artist: artist })
+          res.render('locations', { title: 'Art Catalog', location: intersection, art_piece_name: art_piece_name, description: description, directions: directions, artist: artist })
         }
       }
     })
