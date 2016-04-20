@@ -22,6 +22,7 @@ controller.post('/register', function(req, res, next) {
     passwordHash: String,
   }*/
   // todo: data validation
+  console.log(req.body.username);
   UserAccount.findOne({ username: new RegExp('^'+req.body.username+'$', "i")}, function(err, user) {
       var regExp = /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{6,100}$/;
       if (user) {
@@ -57,7 +58,7 @@ controller.post('/login', function(req, res, next) {
     username: req.body.username,
     password: req.body.password
   };
-  UserAccount.findOne({ username: userInfo.username }, function(err, user) {
+  UserAccount.findOne({ username: new RegExp('^'+req.body.username+'$', "i")  }, function(err, user) {
     // if we find our user.. compare passwords!
     var isPasswordValid = bcrypt.compareSync(userInfo.password, user.passwordHash);
     if (isPasswordValid) {

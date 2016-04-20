@@ -9,9 +9,9 @@
         <div class="row">
             <div class="col-lg-5 login">
                 <h1 class="section-heading">Login</h1>
-                <form action="/account/login" method="post">
-                  <input class="form-control" type="text" name="email" value="" placeholder="Your email">
-                  <input class="form-control" type="password" name="password_hash" value="" placeholder="Your password">
+                <form action="/users/login" method="post">
+                  <input class="form-control" type="text" name="username" value="" placeholder="Your Username">
+                  <input class="form-control" type="password" name="password" value="" placeholder="Your password">
                   <button type="submit" class="btn btn-primary">Log In</button>
                 </form>
             </div>
@@ -23,10 +23,10 @@
 
             <div class="col-lg-6 login">
                 <h1 class="section-heading">Register</h1>
-                <form action="/account/register" method="post">
-                  <input class="form-control" type="text" name="name" value="" placeholder="Your name">
+                <form action="/users/register" method="post">
+                  <input class="form-control" type="text" name="username" value="" placeholder="Your Username">
                   <input class="form-control" type="email" name="email" value="" placeholder="Your email">
-                  <input class="form-control" type="password" name="password_hash" value="" placeholder="Your password">
+                  <input class="form-control" type="password" name="password" value="" placeholder="Your password">
                   <input class="form-control" type="password" name="password_conf" value="" placeholder="Confirm your password">
                   <button type="submit" class="btn btn-primary">Register</button>
                 </form>

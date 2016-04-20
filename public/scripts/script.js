@@ -35,9 +35,9 @@ $("#gotime").submit(function(e) {
     url:  "../images/",
     data: contributeData,
     type: "POST",
-    sucess: function(data) {
+    success: function(what) {
       console.log('I did it');
-      console.log(data);
+      console.log(what);
     },
     error: function(err) {
       console.log(err);
