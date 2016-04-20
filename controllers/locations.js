@@ -26,6 +26,8 @@ controller.get('/', function(req, res, next) {
         console.log(location[0]);
 
         res.json(location)
+        // location = [{}, {}, {}, {}, ]
+        // res.render('location', {})
       }
     })
   })
