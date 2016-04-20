@@ -29,7 +29,7 @@ controller.get('/', function(req, res, next) {
 
 controller.post('/', function(req, res, next){
   var data = JSON.stringify({
-    username: req.body.username,
+    username: 'test',
     location_id: req.body.location_id,
     date: req.body.date,
     image: req.body.image

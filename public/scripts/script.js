@@ -12,19 +12,38 @@
  ////////////////
  //image upload
 
+ var base64image = '';
+
  function readURL(input) {
        if (input.files && input.files[0]) {
            var reader = new FileReader();
 
            reader.onload = function (e) {
-               $("#myImage").val(e.target.result)
-           console.log($('#myImage').val())
+              $("#myImage").val(e.target.result)
+              base64image = e.target.result;
            };
-
            reader.readAsDataURL(input.files[0]);
          }
 };
-
+var contributeData = {}
+$("#gotime").submit(function(e) {
+  e.preventDefault();
+  contributeData.location_id = $('#location_id').val();
+  contributeData.date = $('#date').val();
+  contributeData.image = base64image;
+  $.ajax({
+    url:  "../images/",
+    data: contributeData,
+    type: "POST",
+    sucess: function(data) {
+      console.log('I did it');
+      console.log(data);
+    },
+    error: function(err) {
+      console.log(err);
+    }
+  })
+});
 
  //end of image upload
 
