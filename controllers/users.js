@@ -11,7 +11,8 @@ controller.get('/', function(req, res, next) {
 
 controller.get('/logout', function(req, res, next) {
   req.session.user = null;
-  res.json({ 'message': 'You have been logged out.'});
+  // res.json({ 'message': 'You have been logged out.'});
+  res.render('loggedout', {message: 'You have been logged out. Hope to see you soon.'})
 });
 
 // CREATE an account
@@ -27,19 +28,26 @@ controller.post('/register', function(req, res, next) {
       var regExp = /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{6,100}$/;
       if (user) {
         if (user.username.toLowerCase() === req.body.username.toLowerCase()) {
-          res.json({'message': 'The username already exists'});
+          // res.json({'message': 'The username already exists'});
+          res.render('registererror', { message: 'The username already exists'  })
+
         }
       } else if (req.body.password.length < 6) {
-        res.json({'message': 'The password is shorter than 6 characters'});
+        // res.json({'message': 'The password is shorter than 6 characters'});
+        res.render('registererror', { message: 'The password is shorter than 6 characters'})
       } else if (!regExp.test(req.body.password)) {
-        res.json({'message': 'Password must contain a special chracter(!@#$%^&*) and a number'});
+        // res.json({'message': 'Password must contain a special chracter(!@#$%^&*) and a number'});
+        res.render('registererror', { message: "Password must contain a special chracter(!@#$%^&*) and a number"})
       } else {
         var user = new UserAccount({ username: req.body.username, email: req.body.email, passwordHash: bcrypt.hashSync(req.body.password, Salt)})
         user.save(function (err) {
           if (err) {
             return console.log(err);
           } else {
-            res.json({'message': 'You have successfully registered an account!'})
+            // res.json({'message': 'You have successfully registered an account!'})
+            // res.redirect('/contribute', {message: "You have successfully registered an account!"} )
+            // res.render('contribute', {message: "You have successfully registered an account!"} )
+            res.render('registersuccess', { message: "You have successfully registered an account!"  })
           }
         });
       }
@@ -65,9 +73,11 @@ controller.post('/login', function(req, res, next) {
       // log user in
       req.session.user = user.username;
       console.log(req.session);
-      res.json({ 'message': 'Logged in successfully'});
+      // res.json({ 'message': 'Logged in successfully'});
+      res.render('registersuccess', {message: 'Thanks for logging in!'})
     } else {
-      res.json({ 'message': 'Invalid username and/or password'});
+      // res.json({ 'message': 'Invalid username and/or password'});
+      res.render('registererror', {message: 'Invalid username and/or password'})
     }
   });
 });

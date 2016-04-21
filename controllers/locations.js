@@ -70,8 +70,9 @@ controller.get('/:id', function(req, res, next) {
           console.log(directions);
           artist = location.artist;
           console.log(artist);
+          image = location.image;
           // res.json(location);
-          res.render('locations', { title: 'Art Catalog', location: intersection, art_piece_name: art_piece_name, description: description, directions: directions, artist: artist })
+          res.render('locations', { display: location, image: image, title: 'Art Catalog', location: intersection, art_piece_name: art_piece_name, description: description, directions: directions, artist: artist })
         }
       }
     })
