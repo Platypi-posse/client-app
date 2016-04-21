@@ -18,18 +18,20 @@
 <h4 class="details">artist:</h4> <h4>{{this.artist}}</h4>
 
 <br>
+{{/each}}
 </div>
 
 <div class="col-lg-1"></div>
 
 <div class="col-lg-7">
-  {{#each this.image}}
-    <img class="my-img" src={{this.image}}>
-
+{{#each display}}
+  {{#eachimg this.image}}
+    <br />
+    <img class="my-img" src={{image}}>
     <br/>
-  {{/each}}
-  {{/each}}
-
+    <br/>
+  {{/eachimg}}
+{{/each}}
 </div>
 
 </div>

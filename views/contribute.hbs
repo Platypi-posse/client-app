@@ -20,9 +20,9 @@
 
     <form id="gotime" action="/account/register" method="post">
 
-      <select>
+      <select id="location_id">
       {{#each location}}
-        <option name="location_id" id="location_id" value="{{this.location_id}}">{{this.location_id}} - {{this.art_piece_name}} - {{this.intersection}}</option>
+        <option name="location_id" value="{{this.location_id}}">{{this.location_id}} - {{this.art_piece_name}} - {{this.intersection}}</option>
       {{/each}}
       </select>
       <br>
