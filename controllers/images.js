@@ -39,8 +39,8 @@ controller.post('/', function(req, res, next){
   if (req.session.user) {
     if (req.body.image) {
       var options = {
-        hostname: process.env.Link || "localhost",
-        port: process.env.Port || 5000,
+        hostname: "http://192.241.251.116",
+        port: 80,
         path: "/images/post",
         method: "POST",
         headers: {
