@@ -6,6 +6,17 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var cors = require('cors');
+var handlebars = require('hbs');
+
+handlebars.registerHelper('eachimg', function(context, options) {
+  var ret = "";
+
+  for(var i=0, j=1; i<j; i++) {
+    ret = ret + options.fn(context[i]);
+  }
+
+  return ret;
+});
 
 // require database
 require('./db/database');
@@ -78,6 +89,8 @@ app.use(function(err, req, res, next) {
     error: {}
   });
 });
+
+
 
 
 module.exports = app;
