@@ -19,22 +19,15 @@
 <h4 class="details">directions:</h4> <h4>{{this.directions}}</h4>
 <h4 class="details">artist:</h4> <h4>{{this.artist}}</h4>
 <br>
-{{/each}}
 </div>
 
 <div class="col-lg-1"></div>
 
 <div class="col-lg-7">
-    <img class="my-img" src="/images/IMAG1406.jpg"/>
+  {{#each this.image}}
+    <img class="my-img" src={{this.image}}>
+  {{/each}}
 </div>
 
+{{/each}}
 </div>
-
-<!-- {{#each display}} -->
-<!-- <p>Location ID: {{this.location_id}}</p> -->
-<!-- <p>art_piece_name:{{this.art_piece_name}}</p> -->
-<!-- <p>intersection:{{this.intersection}}</p> -->
-<!-- <p>desc:{{this.description}}</p> -->
-<!-- <p>directions:{{this.directions}}</p> -->
-<!-- <br/> -->
-<!-- {{/each}} -->
