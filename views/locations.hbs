@@ -20,9 +20,14 @@
 </div>
 
 <div class="col-lg-1"></div>
-
+{{#each image}}
 <div class="col-lg-7">
-    <img class="my-img" src="/images/IMAG1406.jpg"/>
+
+  <img src={{this.image}}>
+  <br/>
+
 </div>
+  <br/>
+{{/each}}
 
 </div>

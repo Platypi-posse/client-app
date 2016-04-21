@@ -7,7 +7,7 @@ var http = require('http');
 /* GET home page. */
 controller.get('/', function(req, res, next) {
   // res.render('locations', { title: 'Locations' });
-  var request = http.get("http://localhost:5000/locations", function(response){
+  var request = http.get("http://localhost:5000/locations/images", function(response){
     console.log(response.statusCode);
     var body = "";
     var location = "";
