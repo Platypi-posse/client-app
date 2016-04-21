@@ -9,6 +9,10 @@ controller.get('/', function(req, res, next) {
   res.render('index', { title: 'ChiStreetArt' });
 });
 
+controller.get('/thankyou', function(req,res,next){
+  res.render('thankyou', { message: 'Thank you for submitting!'})
+});
+
 controller.get('/about', function(req,res, next){
   res.render('about', { title: 'About Us'})
 })
