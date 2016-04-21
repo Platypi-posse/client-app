@@ -1,0 +1,47 @@
+<div id="brickwall">
+    <img src="/images/IMAG1450.jpg" alt="" />
+</div>
+
+{{message}}
+<div class="col-lg-6 contribute">
+
+    <!-- <form action="/account/register" method="post">
+      <input class="form-control" type="text" name="artist" value="" placeholder="Artist">
+      <input class="form-control" type="text" name="neighborhood" value="" placeholder="Neighborhood">
+      <input class="form-control" type="text" name="intersection" value="" placeholder="Intersection">
+
+          <label class="file">
+            <input type="file" id="inputFileToLoad" onchange="readURL(this)" >
+            <input type="hidden" id="myImage" name="image" value="">
+          <span class="file-custom"></span><button type="button" class="btn btn-primary btn-primary">Upload</button>
+          </label>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form> -->
+
+    <form id="gotime" action="/account/register" method="post">
+
+      <select id="location_id">
+      {{#each location}}
+        <option name="location_id" value="{{this.location_id}}">{{this.location_id}} - {{this.art_piece_name}} - {{this.intersection}}</option>
+      {{/each}}
+      </select>
+      <br>
+      <label>Date Taken</label>
+
+      <input class="form-control font" type="date" id="date" name="date" value="">
+      <label class="file">
+        <input type="file" id="inputFileToLoad" onchange="readURL(this)" >
+        <input type="hidden" id="myImage" name="image" value="">
+      </label>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
+
+<!-- <div class="col-xs-3 imageupload">
+      <p><h5><strong>Upload Image</strong></h5></p>
+        <label class="file">
+          <input type="file" id="inputFileToLoad" onchange="readURL(this)" >
+          <input type="hidden" id="myImage" name="image" value="">
+        <span class="file-custom"></span><button type="button" class="btn btn-primary btn-xs">Upload</button>
+        </label>
+</div> -->
