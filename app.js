@@ -6,6 +6,17 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var cors = require('cors');
+var handlebars = require('hbs');
+
+handlebars.registerHelper('eachimg', function(context, options) {
+  var ret = "";
+
+  for(var i=0, j=1; i<j; i++) {
+    ret = ret + options.fn(context[i]);
+  }
+
+  return ret;
+});
 
 // require database
 require('./db/database');
@@ -13,7 +24,7 @@ require('./db/database');
 var controllers = require('./controllers/index');
 var users = require('./controllers/users');
 var contribute = require('./controllers/contribute');
-var eachlocation = require('./controllers/eachlocation');
+// var eachlocation = require('./controllers/eachlocation');
 var locations = require('./controllers/locations');
 var images = require('./controllers/images');
 
@@ -43,7 +54,7 @@ app.use(require('express-session')({
 app.use('/', controllers);
 app.use('/users', users);
 app.use('/contribute', contribute);
-app.use('/eachlocation', eachlocation);
+// app.use('/eachlocation', eachlocation);
 app.use('/locations', locations);
 app.use('/images', images);
 
@@ -78,6 +89,8 @@ app.use(function(err, req, res, next) {
     error: {}
   });
 });
+
+
 
 
 module.exports = app;

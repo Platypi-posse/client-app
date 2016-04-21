@@ -17,17 +17,24 @@
 <h4 class="details">directions:</h4> <h4>{{this.directions}}</h4>
 <h4 class="details">artist:</h4> <h4>{{this.artist}}</h4>
 <br>
+{{/each}}
 </div>
 
 <div class="col-lg-1"></div>
 
 <div class="col-lg-7">
-{{#each this.image}}
-<img class="my-img" src={{this.image}}>
-<br/>
+{{#each display}}
+  {{#eachimg this.image}}
+    <br />
+    <img class="my-img" src={{image}}>
+    <br/>
+    <br/>
+  {{/eachimg}}
 {{/each}}
-{{/each}}
+</div>
 
 </div>
+
+
 
 </div>

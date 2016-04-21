@@ -2,7 +2,7 @@
     <img src="/images/IMAG1450.jpg" alt="" />
 </div>
 
-
+{{message}}
 <div class="col-lg-6 contribute">
 
     <!-- <form action="/account/register" method="post">
@@ -20,13 +20,14 @@
 
     <form id="gotime" action="/account/register" method="post">
 
-      <select>
+      <select id="location_id">
       {{#each location}}
-        <option name="location_id" id="location_id" value="{{this.location_id}}">{{this.location_id}} - {{this.art_piece_name}} - {{this.intersection}}</option>
+        <option name="location_id" value="{{this.location_id}}">{{this.location_id}} - {{this.art_piece_name}} - {{this.intersection}}</option>
       {{/each}}
       </select>
       <br>
       <label>Date Taken</label>
+
       <input class="form-control font" type="date" id="date" name="date" value="">
       <label class="file">
         <input type="file" id="inputFileToLoad" onchange="readURL(this)" >
