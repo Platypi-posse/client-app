@@ -16,18 +16,17 @@
 <h4 class="details">intersection:</h4> <h4>{{this.intersection}}</h4>
 <h4 class="details">directions:</h4> <h4>{{this.directions}}</h4>
 <h4 class="details">artist:</h4> <h4>{{this.artist}}</h4>
-
 <br>
 </div>
 
 <div class="col-lg-1"></div>
 
 <div class="col-lg-7">
-  {{#each this.image}}
-    <img class="my-img" src={{this.image}}>
-    <br/>
-  {{/each}}
-  {{/each}}
+{{#each this.image}}
+<img class="my-img" src={{this.image}}>
+<br/>
+{{/each}}
+{{/each}}
 
 </div>
 
