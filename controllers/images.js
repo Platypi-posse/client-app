@@ -40,7 +40,6 @@ controller.post('/', function(req, res, next){
     if (req.body.image) {
       var options = {
         hostname: "http://192.241.251.116",
-        port: 80,
         path: "/images/post",
         method: "POST",
         headers: {
