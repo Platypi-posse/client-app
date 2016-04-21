@@ -4,7 +4,20 @@
 
 
 <div class="col-lg-6 contribute">
-    <h1 class="section-heading">Your street art info</h1>
+
+    <!-- <form action="/account/register" method="post">
+      <input class="form-control" type="text" name="artist" value="" placeholder="Artist">
+      <input class="form-control" type="text" name="neighborhood" value="" placeholder="Neighborhood">
+      <input class="form-control" type="text" name="intersection" value="" placeholder="Intersection">
+
+          <label class="file">
+            <input type="file" id="inputFileToLoad" onchange="readURL(this)" >
+            <input type="hidden" id="myImage" name="image" value="">
+          <span class="file-custom"></span><button type="button" class="btn btn-primary btn-primary">Upload</button>
+          </label>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form> -->
+
     <form id="gotime" action="/account/register" method="post">
 
       <select>
@@ -14,7 +27,7 @@
       </select>
       <br>
       <label>Date Taken</label>
-      <input class="form-control" type="date" id="date" name="date" value="">
+      <input class="form-control font" type="date" id="date" name="date" value="">
       <label class="file">
         <input type="file" id="inputFileToLoad" onchange="readURL(this)" >
         <input type="hidden" id="myImage" name="image" value="">
