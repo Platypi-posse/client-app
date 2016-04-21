@@ -93,7 +93,7 @@ controller.post('/', function(req, res, next){
     directions: req.body.directions
   });
   var options = {
-    hostname: process.env.Link || "localhost",
+    hostname: process.env.LinkNo || "localhost",
     port: process.env.Port || 5000,
     path: "/locations/post",
     method: "POST",
