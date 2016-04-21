@@ -40,7 +40,7 @@ controller.post('/', function(req, res, next){
     if (req.body.image) {
       var options = {
         hostname: process.env.Link || "localhost",
-        port: 5000,
+        port: process.env.Port || 5000,
         path: "/images/post",
         method: "POST",
         headers: {
