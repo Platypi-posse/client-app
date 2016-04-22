@@ -27,6 +27,7 @@ We can’t always be the eyes on the street and need your help to allow this pro
 - MongoDB
 
 ### Approach Taken
+We decided to create a catalog application that would store Chicago street art historically. We then mapped out our user locations & images ERD.  After which we decided use MongoDB for our API and User's table to help with the performance of the application and ease of use.  The front end was built using HTML, LESS and Javascript.  Node and Express was selected for both the FrontEnd server and API server.  This combination of technologies allowed us to create a great user experience while keeping performance in mind of querying multiple servers.
 
 
 ### Wireframes
@@ -46,3 +47,10 @@ We can’t always be the eyes on the street and need your help to allow this pro
 
 ### Unsolved Problems/Not Enough Time
 - Image carousel for each location
+- Styling for images
+- Automatic login post register
+- Image resizing
+- Better efficiency with the API server
+- Better efficiency with Mlabs for the user database
+- Adding components with a Javascript Framework.
+- Creating a mobile application version.
