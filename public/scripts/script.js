@@ -38,6 +38,7 @@ $("#gotime").submit(function(e) {
     success: function(what) {
       console.log('I did it');
       console.log(what);
+      location.href = "/thankyou"
     },
     error: function(err) {
       console.log(err);
